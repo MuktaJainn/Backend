@@ -1,0 +1,46 @@
+Topics
+
+1) Node vs express
+
+2) What is express js
+
+3) Why express.js
+
+4) routing
+
+5) middleware
+
+6) request and response
+
+7) route parameters
+
+8) template engines
+
+9) static files
+
+10) http methods
+
+11) error handling
+
+
+
+
+
+Node.js has http but it would be so difficult to write a server using node.js's http
+that's why we use express.js.
+
+
+Node is capable of making a server, like cpu is capable of doing 2+2 =4, but like we 
+need a calculator there for our calculation to occure, in node.js we needed to express.js or http
+but yes raw http - difficult so we use express.js that under the hood gets converted to http only
+
+express js is a package available but behind the scene its using http only, if
+we would have to write http it would be so diffcult. WE can do routing, server side management
+
+
+
+
+//ROUTING :  - the process of making routes.... /home, /contact
+
+
+

@@ -1,0 +1,33 @@
+//What is INternet, how data gets transferred from one device to another, Isps..
+
+2) router,ip, mac, server, client, isp, http, https, INternet
+
+router..our phones are conneted to wifi and wifi is connected to internet...wifi takes the message
+
+when we recieve a message, actually the wifi recieves it and them delivers it to the desired mac address
+
+a computer that is programmed to serve files over the internet is known as server.
+
+server doesn't require other parts of a computer other than cpu.request-response-client server architecture
+
+server can be our normal computers where we have programmed it to serve and we can do other
+computational process too but why to reduce the serving capacity.
+
+
+http v/s https
+http responsible why we can send and recieve data on internet.
+
+we have to follow the rules set up by the creators of internet and all internet service 
+providers would ensure that their users follow the rules of http.
+
+
+in http, the data we transmitted are leaving out device in forms of packets to reach the
+isps, but someone(hacker) can use another dongle and in the monitor mode, they can see 
+the packets that is being transmitted from your computer..soo highly insecure
+
+in htttps, data is transmitted just like how it is transmitted using http but it's encrypted..your
+can't read it.
+
+
+ports - > close ports and open ports ...ports are numbers, 4 or 5 digit, u can get connected
+to the server via the open port.
