@@ -1,4 +1,4 @@
-Topics
+Topics.
 
 1) Node vs express
 
