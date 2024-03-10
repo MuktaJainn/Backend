@@ -1,0 +1,167 @@
+Tasks :-
+
+express js
+install
+express js boilerplate code - go to npm, search express and copy the code.
+express js ejs setup
+install ejs
+set view engine
+create view folder
+create ejs files
+render ejs files inside route
+express static files setup
+architechture of public folder
+
+//done
+
+
+//Today's topic,
+
+we can avoid creating all the files ourselves by using express generator that will give us
+the folder structure itself and also it will write the basic code itself. - will write this
+in Firstapp
+
+express generator gives you a folder that means u don't have to create it yourself.
+
+steps to use express generator:-
+
+1) install it on laptop globally for atleast once in life. (npm i express-generator -g)
+
+2) To create new app anywhere:
+open cmd move to desktop
+create new app
+express appname --view=ejs
+3) now use twp commands
+cd appname
+npm i 
+open it on vscode. - using (code .)
+
+
+
+//MongoDB
+
+database - where our web application, any application's data is getting stored
+
+relational- sql,mysql
+non-relational : - mongoDB
+
+    CODE SIDE                               MONGO DB SIDE
+---------------------------  ----------------------------------
+  
+1) DB setup               ->                 1) DB formation
+2) MODEL                  ->                 2) Collection 
+3) Schema                 ->                 3) Documents 
+
+
+every new app's data will be stored in a storage, but we'll store it in a container, 
+that container will contain only that app's data..that container will be that app's database
+ -----------|---------------
+|           |               |                     
+|   App's   |               |
+|     DB    |               |
+|___________|_______________|
+|           |               |  ==> STORAGE
+|           |               |
+|           |               |
+ -----------|---------------
+ 
+
+
+that particular app's database will have further bifurcations too, that would be models(code),
+the bifurcations that would be formed in database would be collections.
+
+ -----------|---------------
+|           |               |                     
+|   Users   |     Product   |
+|Collection | Collection    |
+|___________|_______________|
+|           |               |  ==> App's Database
+|           |               |
+|           |               |
+ -----------|---------------
+
+
+like users data, account data, product data, these are the models in code and collections in database
+
+models(code) => collection(db)
+
+
+
+Now, let's say we are inside that collection, let's say user's collections.
+Now there will be a lot of users having data, like there age, name, address, phone, email
+So, if we are talking about a particular user i.e documents.
+
+ -----------|---------------
+|           |               |                     
+|   Users 1 |   User2       |
+|    data   |    data       |
+|___________|_______________|
+|           |               |  ==> User's Collection(saare users ka data)
+|           |               |
+|           |               |
+ -----------|---------------
+
+ user'1 data => documents
+
+schema(code) =>documents(db)
+
+
+//install mongoDB server
+
+1)Install mongodb from the site, 
+2)the go to terminal, cd Downloads 
+3)then find out the name of the mongodb file through the ls command
+4)and do "sudo dpkg -i mongodb-org-server_7.0.6_amd64.deb"
+5)then sudo systemctl status mongod--> it will show "Active: inactive (dead)"
+6)now, to activate do "sudo systemctl start mongod"
+7) now when you'll run "sudo systemctl status mongod", it will show Active: active (running)
+
+
+Now, we have succefully installed mongodb server
+To connect to this server and to create some database, we'll need utility names mongo sh for cli 
+
+//Installing mongodb shell
+1) Go to mongodb download site again and download mongodb shell - 
+2) after downloading go to terminal and do "sudo dpkg -i mongodb-mongosh_2.1.5_amd64.deb"
+3) mongosh => to check the status, if everything is working fine, this mongosh command is going to
+connect your default mongo db server that is running on your local host
+4) u can use command like
+4.1) show dbs-> will show all the databases.
+4.2) want to create databse -> use nameofdatabse.
+5) To view this databse using "show dbs", u first need to insert some data, otherwise it won't be showing
+6) To create collection, use db.createCollection("nameofcollection")
+7)u can view collections, using "show collections"
+8) To insert data, db.nameofcollection.insert({user:"Mukta"})
+
+{Mongodb shell is working finee}
+
+
+Now, installing mongodb compass,
+1)Go to mongodb website, download mongodb compass.
+2) Now go to terminal, and cd Downloads.
+4) Then do ls and find the name of the file downloaded
+3) then again do, sudo dpkg -i mongodb-compass_1.42.2_amd64.deb 
+succesfully downloaded the gui .
+
+
+
+
+
+//install mongoosejs (npm i mongoose)
+
+
+//require 
+const mongoose = require("mongoose");
+
+//setup connection 
+mongoose.connect("mongodb://127.0.0.1:27017/dbname"); 
+
+* here we are telling node to connect through mongoose to mongodb
+* By this setup, a database named "dbname" is formed 
+
+"mongodb://127.0.0.1:27017" -> local host, why local as it's running on our laptop
+
+
+
+//make schema 
+//create model 
