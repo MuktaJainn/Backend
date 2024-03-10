@@ -12,19 +12,6 @@ Topics.
 
 6) request and response
 
-7) route parameters
-
-8) template engines
-
-9) static files
-
-10) http methods
-
-11) error handling
-
-
-
-
 
 Node.js has http but it would be so difficult to write a server using node.js's http
 that's why we use express.js.
@@ -35,12 +22,90 @@ need a calculator there for our calculation to occure, in node.js we needed to e
 but yes raw http - difficult so we use express.js that under the hood gets converted to http only
 
 express js is a package available but behind the scene its using http only, if
-we would have to write http it would be so diffcult. WE can do routing, server side management
+we would have to write http it would be so diffcult, this http is written in js. WE can do routing, server side management
 
 
 
 
 //ROUTING :  - the process of making routes.... /home, /contact
+
+//Middleware ->  a function that is executed before every route. If you want to do something
+before the route executed, u can use middleware..har route se pahle
+
+//Middleware -> 
+app.use(function(req,res,next){
+    console.log("hello from middleware");
+    next();//without this i would get fix at the first route i.e '/'
+})
+
+req-> user related data, eg location, device info
+res -> server se aane waala code user ko jaane wala, controls hote hai jinke basis pe hum
+server se response bhej paate hai
+
+next -> in node there is an issue, if ever the control went to a middleware, it won't go to the next route
+itself..to send it to the next route, we have to push i.e next execution
+
+
+dynamic routing -> a route whose some part remains same , and a part keeps on getting changed
+for that we can make a dynamic route.
+
+like say, 
+/profile/mukta
+/profile/yukti
+/profile/swati
+
+we can do, /profile/:username
+:username -> params
+
+it will work for any username now.
+
+
+url mai jab bhi we have this pattern /profile/:username..like we have :, 
+
+
+
+
+
+
+
+7) route parameters - to make any route dynamic u can use colon at the place where 
+u want to make it dynamic and to access it's value use req.params. <name>
+
+eg, /profile/:class
+req.params.class
+
+8) template engines-> ejs is html with superpowers(calculation) u can do js inside html.
+
+
+steps to set up ejs: 1) npm i ejs  2) configure ejs-> app.set("view engine", "ejs");
+
+3) ek views folder banao  4) usmei ejs files banao  
+5)send ki jagah render karo - make sure that u are using a file that is inside the views
+ folder but don't add ejs in the render fn.
+
+ template engines- yeah ek style of markup hai jo convert hoke html dete hai..there are many 
+ template engines like pug, handlebars, ejs..we are using ejs, why? because it looks
+ exactly like html
+
+ ejs just looks similar to html, it is not html..it will get converted to html.
+
+
+
+9) static files  - images, stylesheet and frontend js setup
+
+setting up  static files:
+1) create a folder public
+2) create three folders inside it, images, stylesheets, javascripts
+3) configure the express static in index.js
+4) understand the path.
+
+
+
+10) http methods  -> get and post 
+
+11) error handling -> 
+
+
 
 
 
