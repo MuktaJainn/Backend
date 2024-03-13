@@ -164,4 +164,65 @@ mongoose.connect("mongodb://127.0.0.1:27017/dbname");
 
 
 //make schema 
+
+banne wala har document mai kya kya hoga...
+const userschema = mongoose.Schema({
+    username: String,
+    name:String,
+    age:Number
+})
 //create model 
+This will form a collection, the first argument would be the name of the collection, 
+and schema passed would give the structure of the documents that the collection contains
+
+
+module.export = mongoose.model("nameOfCollection", Whichschema)
+
+
+we are setting up this mongoDB in user.js
+
+
+
+//CRUD operations.
+
+create read delete done..
+
+
+cookie and sessions: -> use to save data
+
+client side- cookie (someone can hack or stuff data, that's why not safe)
+server side - session (more safe)
+
+
+//creating sessions :- install express-session
+//we need to write 
+var session = require("express-session);
+app.use(session({
+    resave:false,
+    saveUnitialized :false,
+    secret:"holamigokaisehotheekho"
+}))
+
+
+Now to make a session, go to any route file and right req.session.nameofsession ="hello"
+nameofssesion named session craeted
+
+now once you have created session, u can check it any of the route
+
+create: req.session.name = value
+
+delete
+
+req.session.destroy
+
+
+cookie
+
+u need package cookie parser, but it comes along with express generator
+
+saved in front-end browser 
+
+
+
+
+
