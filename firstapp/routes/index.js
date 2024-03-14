@@ -7,10 +7,26 @@ const userModel = require("./users")
 
 /* GET home page. */
 router.get('/', function(req, res) {
+  res.cookie("age",18); //creating cooking
   req.session.banned=true;
   res.render("index"); //is ;laptop ke server par banned ki value true set
   
 });
+
+//checking cooking
+
+router.get('/cookie' , function(req,res){
+  
+  res.send(req.cookies.age)
+})
+
+//delete cookie
+
+router.get('/coodet' , function(req,res){
+  res.clearCookie("age");
+  res.send("clear")
+
+})
 
 //the session property is set before rendering the index view in the first route handler. This ensures that the session property is properly set before any response is sent to the client.
 

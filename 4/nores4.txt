@@ -195,7 +195,7 @@ server side - session (more safe)
 
 
 //creating sessions :- install express-session
-//we need to write 
+//we need to write in app.js
 var session = require("express-session);
 app.use(session({
     resave:false,
@@ -220,7 +220,19 @@ cookie
 
 u need package cookie parser, but it comes along with express generator
 
-saved in front-end browser 
+saved in front-end browser (server se jayegaa)
+
+create
+res.cookie("age",18);
+
+read 
+req.cookies.age
+
+delete
+
+res.clearCookie("age)
+
+
 
 
 

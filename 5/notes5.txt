@@ -1,0 +1,114 @@
+whenever you'll see qn ejs page, when you have to give any kind of information that are flash
+messages..more like beautiful alert messages
+
+
+install connect - flash
+make sure you setup express-session
+make sure you put connect falsh in a app.use function 
+kisi bhi reoute mein app ko flash create karna hai
+kisi bhi doosre route par app use chalane ka try kare.
+
+APP CONNECT FLASH KO USE NAHI KAR SKTE BINA EXPRESS SESSION ke
+
+1)creating express generator, 
+
+2)then comming into that folder..and running npm i(json packages and all ke liye)
+
+3) npm i connect-flash
+
+4) npm i express-session
+
+
+//flash mssg matlb ek route mai isse banana, and doosre mai use kar paana
+
+flash message allows us to use the data formed in a prticular eoute in another route
+
+use case - when we'll login, and it failed..toh we'll have to use flash as it will reflect
+failed in the next route 
+
+
+
+//INtermediate mongodb - in index.js
+
+setup mongoose
+
+1) How can I perform a case sensitive search in Mongoose. 
+
+new RegExp(search,flags)
+new RegExp("name",'i') - i is for case insensitive search
+
+but this RegExp would return all the words containing the "name" word for eg, if we 
+are finding harsh..it will return Harsh, Harshitaa, Harshii, harsh every name containing harsh
+
+^ -> start aisi ho
+$ -> ant aisa ho 
+
+now we'll just get harsh
+
+new RegExp("^harsh$",'i')
+
+
+2) How do I find documents where an array field contains all of a set of values
+eg, i want to find users who contains an array and that array has a particular value.
+return users with that value
+
+//users having a particular same value in a array
+
+ let userss = await userModel.find({array:{$all : "value"}})
+
+
+  let userss = await userModel.find({categories:{$all : "js"}})
+
+ 
+let userss = await userModel.find({categories:{$all : ["js"]}});
+And:
+
+let userss = await userModel.find({categories:{$all : "js"}});
+In MongoDB, when you use $all operator, it expects an array of values to match against. However, when you provide a single value instead of an array, MongoDB automatically converts it into an array with a single element. So, "js" is effectively treated as ["js"].
+
+Therefore, both queries are functionally equivalent. However, it's generally a good practice to explicitly use an array, as it makes the intent clearer and may prevent confusion in the future if you or someone else reads the code. So, the first version is preferred for clarity and consistency.
+
+
+3) How can I search for documents with a specific data range in Mongoose 
+
+4) How can I filter documents based on the existence of a field in Mongoose 
+
+5) How can I filter document based on the specific field's length in Mongoose 
+
+This query is using the $expr operator in MongoDB, which allows you to use aggregation expressions within a query. Here's a breakdown of what each part of the query is doing:
+
+userModel.find({}): This is a Mongoose method used to find documents in the userModel collection based on the specified conditions.
+
+$expr: This is a MongoDB aggregation expression operator. It allows you to use aggregation expressions to filter documents in a query.
+
+$and: This is a logical operator that performs a logical AND operation on an array of expressions. It requires that all of the expressions in the array must evaluate to true for the document to match the query.
+
+$strLenCP: This is a string aggregation operator that returns the number of UTF-8 code points in a string. Here, it's used to get the length of the nickname field in each document.
+
+$gte: This is a comparison aggregation operator that checks if the first value is greater than or equal to the second value. Here, it's used to ensure that the length of the nickname field is greater than or equal to 0.
+
+$lte: This is a comparison aggregation operator that checks if the first value is less than or equal to the second value. Here, it's used to ensure that the length of the nickname field is less than or equal to 12.
+
+In summary, the query is finding documents in the userModel collection where the length of the nickname field is between 0 and 12 characters (inclusive). It uses the $expr operator to evaluate an aggregation expression that checks the length of the nickname field using $strLenCP, and the $and operator to combine the two conditions for length check.
+
+
+AUTHENTICATION 
+strategy using rn -> local  | code- passport-local,  | password encryption/decryption code -> passport-local-mongoose 
+others are googleOAuth etc.
+
+if you want to save something on server side, session has to be created.
+
+
+Steps : -
+1)express generator
+2)npm i 
+
+
+install packages :-
+1)npm i passport passport-local passport-local-mongoose mongoose express-session
+2) write app.js code and write it after view engine and before logger 
+3) set up users.js then properly 
+
+in index.js try register first and then other codes as well.
+
+
